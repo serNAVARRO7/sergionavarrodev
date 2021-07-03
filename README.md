@@ -1,5 +1,7 @@
 # Sergio Navarro webpage
 
+## IMPORTANT!! When github action complete, move s3 objects from "personal-web/..." to main bucket dir
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
 ## Development server
