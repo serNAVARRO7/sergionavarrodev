@@ -16,6 +16,7 @@ export class SpanishComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
+    console.log('Version 1.0.1');
   }
 
   mailMe(){

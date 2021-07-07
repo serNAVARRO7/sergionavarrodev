@@ -18,7 +18,7 @@ import { EnglishComponent } from './english/english.component';
     EnglishComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     MatIconModule,
     FormsModule,
