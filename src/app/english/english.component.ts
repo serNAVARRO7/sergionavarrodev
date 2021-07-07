@@ -9,7 +9,6 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class EnglishComponent implements OnInit {
   contactForm = this.fb.group({
     subject: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
     message: ['', Validators.required],
   });
   invalidForm: boolean = false;
@@ -22,7 +21,7 @@ export class EnglishComponent implements OnInit {
   mailMe(){
     if (this.contactForm.valid ) {
       this.invalidForm = false;
-      const mailText = `mailto:${this.contactForm.get('subject')?.value}?subject=${this.contactForm.get('email')?.value}&body=${this.contactForm.get('message')?.value}`;
+      const mailText = `mailto:navarrosergio1998@gmail.com?subject=${this.contactForm.get('subject')?.value}&body=${this.contactForm.get('message')?.value}`;
       window.location.href = mailText;
     }
     else {
