@@ -1,3 +1,17 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+$scales: (
+    small: 1.1,
+    medium: 1.3,
+    big: 1.5,
+);
+
+@each $scale, $value in $scales {
+    .grow-#{$scale}:hover {
+        transform:scale($value,$value);
+        -webkit-transform:scale($value,1.3);
+        -moz-transform:scale($value,$value);
+    }
+}
