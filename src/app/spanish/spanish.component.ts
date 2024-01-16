@@ -4,7 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-spanish',
   templateUrl: './spanish.component.html',
-  styleUrls: ['./spanish.component.scss']
+  styleUrls: ['./spanish.component.scss'],
 })
 export class SpanishComponent implements OnInit {
   contactForm = this.fb.group({
@@ -12,20 +12,20 @@ export class SpanishComponent implements OnInit {
     message: ['', Validators.required],
   });
   invalidForm: boolean = false;
+  year = new Date().getFullYear();
 
   constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {
-    console.log('Version 1.0.1');
-  }
+  ngOnInit(): void {}
 
-  mailMe(){
-    if (this.contactForm.valid ) {
+  mailMe() {
+    if (this.contactForm.valid) {
       this.invalidForm = false;
-      const mailText = `mailto:navarrosergio1998@gmail.com?subject=${this.contactForm.get('subject')?.value}&body=${this.contactForm.get('message')?.value}`;
+      const mailText = `mailto:navarrosergio1998@gmail.com?subject=${
+        this.contactForm.get('subject')?.value
+      }&body=${this.contactForm.get('message')?.value}`;
       window.location.href = mailText;
-    }
-    else {
+    } else {
       this.invalidForm = true;
     }
   }
